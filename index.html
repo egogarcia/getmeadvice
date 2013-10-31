@@ -120,10 +120,20 @@ margin: 0px 0px;
 	</div>
 	<div>
 	<br>
-	<p><a class="btn btn-lg btn-success" href="#describir consulta" onClick="loadPublishForm();">Empezar</a></p>
+	<p><a class="btn btn-lg btn-success" href="#describir consulta" onClick="loadPublishForm();"><i class="fa fa-flag-checkered"></i> <br>Empezar</a></p>
 	</div>
 	</div>
 	</div>
+	<div id="register" class="panel panel-primary" style="margin: 0px 0px;">
+  <div class="panel-heading">
+    <h4 class="text-center">¿Se considera un experto?</h4>
+  </div>
+  <div class="panel-body text-center">
+	
+    <p>Regístrese en Get Me Advice y tras valorar su candidatura podrá empezar a ofrecer sus servicios y asesorías con la garantía de nuestra plataforma.</p>
+	<p><a class="btn btn-default" href="#describir consulta" onClick="loadRegisterForm();"><i class="fa fa-briefcase"></i> <br>Registro como experto</a></p>
+  </div>
+</div>
 <!--<hr> -->
 <div style="background-image:url('./images/banner.png'); ">
 <br>
@@ -172,10 +182,24 @@ margin: 0px 0px;
 	function loadPublishForm(){
 	$( "#content" ).empty();
 	$( "#myCarousel" ).empty();
+	$( "#register" ).empty();
 	$( "#content" ).append('<h2><i class="fa fa-file-text"></i><strong> -> Describa su consulta: </strong></h2>');
 	JotformAnywhere.insertForm({
 		formEmbedUrl:"http://form.jotformeu.com/jsform/33018877562360", 
 		formID: "33018877562360",
+        insertTo: "#content",
+        putEditButton: false,
+        putDeleteButton: false
+    })
+	}
+	function loadRegisterForm(){
+	$( "#content" ).empty();
+	$( "#myCarousel" ).empty();
+	$( "#register" ).empty();
+	$( "#content" ).append('<h2><i class="fa fa-briefcase"></i> -> Registro como experto</h2>');
+	JotformAnywhere.insertForm({
+		formEmbedUrl:"http://form.jotformeu.com/jsform/33034604560344", 
+		formID: "33034604560344",
         insertTo: "#content",
         putEditButton: false,
         putDeleteButton: false
